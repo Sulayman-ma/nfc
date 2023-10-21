@@ -5,7 +5,7 @@ import { useCallback } from 'react';
 import * as Splashscreen from 'expo-splash-screen'
 import styles from './styles';
 
-const Home = ({ navigation }) =>  {
+const Profile = ({ navigation }) =>  {
   const [fontLoaded,error] = useFonts({
     ralewayRegular: require('../../assets/fonts/Raleway-Regular.ttf'),
     ralewayBold: require('../../assets/fonts/Raleway-Bold.ttf'),
@@ -25,17 +25,11 @@ const Home = ({ navigation }) =>  {
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>Home to react native</Text>
-      <Pressable 
-        style={styles.primaryButton} 
-        onPress={() => navigation.navigate('Profile')}
-      >
-        <Text>Go to Profile</Text>
-      </Pressable>
+      <Text style={styles.textStyle}>Profile Page</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
 
-export default Home
+export default Profile
 
