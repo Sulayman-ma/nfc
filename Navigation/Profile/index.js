@@ -1,18 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, Pressable } from 'react-native';
+import { Text, View } from 'react-native';
 import {useFonts} from 'expo-font'
 import { useCallback } from 'react';
 import * as Splashscreen from 'expo-splash-screen'
+import UseGetFonts from '../../Hooks/useGetFonts';
 import styles from './styles';
 
-const Profile = ({ navigation }) =>  {
-  const [fontLoaded,error] = useFonts({
-    ralewayRegular: require('../../assets/fonts/Raleway-Regular.ttf'),
-    ralewayBold: require('../../assets/fonts/Raleway-Bold.ttf'),
-    ralewayExtraBold: require('../../assets/fonts/Raleway-ExtraBold.ttf'),
-    ralewayExtraLight: require('../../assets/fonts/Raleway-ExtraLight.ttf'),
-    ralewaySemiBold: require('../../assets/fonts/Raleway-SemiBold.ttf'),
-  })
+const Profile= ()=>  {
+  const [fontLoaded,error] = UseGetFonts()
 
   const onLayoutRootView = useCallback(async() => {
     if(fontLoaded){
@@ -26,10 +21,9 @@ const Profile = ({ navigation }) =>  {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>Profile Page</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }
 
 export default Profile
-
