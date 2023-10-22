@@ -3,16 +3,11 @@ import { Text, View, Pressable } from 'react-native';
 import {useFonts} from 'expo-font'
 import { useCallback } from 'react';
 import * as Splashscreen from 'expo-splash-screen'
-import styles from './styles';
+import UseGetFonts from '../../Hooks/useGetFonts';
+import commonStyles from '../../assets/common-styles';
 
-const Home = ({ navigation }) =>  {
-  const [fontLoaded,error] = useFonts({
-    ralewayRegular: require('../../assets/fonts/Raleway-Regular.ttf'),
-    ralewayBold: require('../../assets/fonts/Raleway-Bold.ttf'),
-    ralewayExtraBold: require('../../assets/fonts/Raleway-ExtraBold.ttf'),
-    ralewayExtraLight: require('../../assets/fonts/Raleway-ExtraLight.ttf'),
-    ralewaySemiBold: require('../../assets/fonts/Raleway-SemiBold.ttf'),
-  })
+const Home= ()=>  {
+  const [fontLoaded,error] = UseGetFonts()
 
   const onLayoutRootView = useCallback(async() => {
     if(fontLoaded){
@@ -38,4 +33,15 @@ const Home = ({ navigation }) =>  {
 }
 
 export default Home
+// component uniques style
+const styles = StyleSheet.create({
+  textStyle : {
+    fontFamily: "ralewayBold",
+    fontSize: 23,
+  },
+  ...commonStyles
+});
+
+
+
 
