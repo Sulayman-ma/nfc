@@ -3,15 +3,11 @@ import { Text, View } from 'react-native';
 import {useFonts} from 'expo-font'
 import { useCallback } from 'react';
 import * as Splashscreen from 'expo-splash-screen'
-import styles from './styles';
+import UseGetFonts from '../../Hooks/useGetFonts';
+import commonStyles from '../../assets/common-styles';
+
 const Home= ()=>  {
-  const [fontLoaded,error] = useFonts({
-    ralewayRegular: require('../../assets/fonts/Raleway-Regular.ttf'),
-    ralewayBold: require('../../assets/fonts/Raleway-Bold.ttf'),
-    ralewayExtraBold: require('../../assets/fonts/Raleway-ExtraBold.ttf'),
-    ralewayExtraLight: require('../../assets/fonts/Raleway-ExtraLight.ttf'),
-    ralewaySemiBold: require('../../assets/fonts/Raleway-SemiBold.ttf'),
-  })
+  const [fontLoaded,error] = UseGetFonts()
 
   const onLayoutRootView = useCallback(async() => {
     if(fontLoaded){
@@ -23,12 +19,26 @@ const Home= ()=>  {
     return null
   }
   return (
-    <View style={styles.container}>
+    
+    <View style={styles.container}> 
+    {/* using the common stylings */}
       <Text style={styles.textStyle}>ome to react native</Text>
+      {/* using peculiar styling */}
       <StatusBar style="auto" />
     </View>
   );
 }
 
 export default Home
+// component uniques style
+const styles = StyleSheet.create({
+  textStyle : {
+    fontFamily: "ralewayBold",
+    fontSize: 23,
+  },
+  ...commonStyles
+});
+
+
+
 
