@@ -3,7 +3,7 @@ import { Text, View, Pressable } from 'react-native';
 import {useFonts} from 'expo-font'
 import { useCallback } from 'react';
 import * as Splashscreen from 'expo-splash-screen'
-import UseGetFonts from '../../Hooks/useGetFonts';
+import UseGetFonts from '../../hooks/useGetFonts';
 import commonStyles from '../../assets/common-styles';
 
 const Home= ()=>  {
@@ -33,15 +33,6 @@ const Home= ()=>  {
 }
 
 export default Home
-// component uniques style
-const styles = StyleSheet.create({
-  textStyle : {
-    fontFamily: "ralewayBold",
-    fontSize: 23,
-  },
-  ...commonStyles
-});
-
 
 
 
