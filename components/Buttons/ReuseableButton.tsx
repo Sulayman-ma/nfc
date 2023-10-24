@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {SIZES} from '../../constants/theme';
+import {FONT, SIZES} from '../../constants/theme';
 
 interface ButtonProp {
   onPress: ((event: GestureResponderEvent) => void) | undefined;
@@ -49,8 +49,9 @@ const styles = StyleSheet.create({
     borderColor: borderColor,
   }),
   btnText: textColor => ({
-    fontFamily: 'medium',
+    fontFamily: FONT.roboto,
     fontSize: SIZES.medium,
     color: textColor,
+    textTransform: 'capitalize',
   }),
 });

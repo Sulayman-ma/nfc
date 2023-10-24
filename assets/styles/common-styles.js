@@ -1,9 +1,10 @@
 import {StyleSheet} from 'react-native';
+import {COLORS} from '../../constants/theme';
 
 const commonStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1f2f54',
+    backgroundColor: COLORS.lightsteelblue,
     alignItems: 'center',
     justifyContent: 'center',
   },

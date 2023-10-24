@@ -1,23 +1,34 @@
-import {Text, View} from 'react-native';
 import styles from './styles';
-import React from 'react';
-import {ReuseableButton} from '../../components';
-import {COLORS, SIZES} from '../../constants/theme';
+import React, {PropsWithoutRef} from 'react';
+import {HeightSpacer, ReuseableButton, ReuseableText} from '../../components';
+import {COLORS, FONT, SIZES, TEXT} from '../../constants/theme';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-const Home = ({navigation}) => {
+type HomeProp = PropsWithoutRef<{
+  navigation: {
+    navigate: any;
+  };
+}>;
+const Home = ({navigation}: HomeProp) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>Home to react native</Text>
+    <SafeAreaView style={styles.container}>
+      <ReuseableText
+        text={'Home to react native'}
+        family={FONT.roboto}
+        size={TEXT.large}
+        color={COLORS.gray}
+      />
+      <HeightSpacer height={37} />
       <ReuseableButton
         onPress={() => navigation.navigate('profile')}
         btnText={'go to profile'}
         textColor={COLORS.white}
-        width={SIZES.xxLarge}
-        backgroundColor={COLORS.gray2}
-        borderWidth={SIZES.small}
+        width={(SIZES.width - 50) / 2.2}
+        backgroundColor={COLORS.gray}
+        borderWidth={0}
         borderColor={COLORS.secondary}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
