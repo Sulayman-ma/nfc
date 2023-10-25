@@ -14,7 +14,7 @@ const Home = ({navigation}: HomeProp) => {
     <SafeAreaView style={styles.container}>
       <ReuseableText
         text={'Home to react native'}
-        family={FONT.roboto}
+        family={FONT.ralewayRegular}
         size={TEXT.large}
         color={COLORS.gray}
       />

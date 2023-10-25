@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import {FONT, SIZES} from '../../constants/theme';
+import {FONT, SHADOWS, SIZES} from '../../constants/theme';
 
 interface ButtonProp {
   onPress: ((event: GestureResponderEvent) => void) | undefined;
@@ -29,7 +29,7 @@ const ReuseableButton = (prop: ButtonProp) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={styles.btnStyle(width, backgroundColor, borderWidth, borderColor)}>
+      style={[styles.btnStyle(width, backgroundColor, borderWidth, borderColor), SHADOWS.large]}>
       <Text style={styles.btnText(textColor)}>{btnText}</Text>
     </TouchableOpacity>
   );
