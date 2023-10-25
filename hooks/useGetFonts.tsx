@@ -1,5 +1,5 @@
 import {useFonts} from 'expo-font'
-import font from '../assets/'
+
 const UseGetFonts = () => {
     const [fontLoaded,error] = useFonts({
         ralewayRegular: require('../assets/fonts/Raleway-Regular.ttf'),

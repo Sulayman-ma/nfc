@@ -105,7 +105,7 @@ const FONT = {
   medium: 'DMMedium',
   bold: 'DMBold',
   raleway: 'Raleway',
-  roboto: 'Roboto',
+  ralewayRegular:' ralewayRegular',
 };
 
 const SHADOWS = {
@@ -129,6 +129,16 @@ const SHADOWS = {
     shadowRadius: 5.84,
     elevation: 5,
   },
+  large: {
+    shadowColor: '#171717',
+    shadowOffset: {
+      width: -2, 
+      height: 4
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 10,
+  }
 };
 
 const SIZES = {
