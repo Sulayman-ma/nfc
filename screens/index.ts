@@ -1,3 +1,6 @@
 import Home from './Home';
 import Profile from './Profile';
-export {Home, Profile};
+import Login from './Auth/Login';
+import Signup from './Auth/Signup';
+
+export {Home, Profile, Signup, Login};

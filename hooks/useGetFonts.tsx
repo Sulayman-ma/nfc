@@ -1,7 +1,13 @@
+import {useFonts} from 'expo-font'
 const UseGetFonts = () => {
-  const [fonts, setfonts] = [[], []];
+    const [fontLoaded,error] = useFonts({
+        ralewayRegular: require('../assets/fonts/Raleway-Regular.ttf'),
+        ralewayBold: require('../assets/fonts/Raleway-Bold.ttf'),
+        ralewayExtraBold: require('../assets/fonts/Raleway-ExtraBold.ttf'),
+        ralewayExtraLight: require('../assets/fonts/Raleway-ExtraLight.ttf'),
+        ralewaySemiBold: require('../assets/fonts/Raleway-SemiBold.ttf'),
+      })
+return [fontLoaded, error]
+}
 
-  return [fonts, setfonts];
-};
-
-export default UseGetFonts;
+export default UseGetFonts
