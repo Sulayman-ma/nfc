@@ -2,11 +2,10 @@ import {useFonts} from 'expo-font'
 
 const UseGetFonts = () => {
     const [fontLoaded,error] = useFonts({
-        ralewayRegular: require('../assets/fonts/Raleway-Regular.ttf'),
-        ralewayBold: require('../assets/fonts/Raleway-Bold.ttf'),
-        ralewayExtraBold: require('../assets/fonts/Raleway-ExtraBold.ttf'),
-        ralewayExtraLight: require('../assets/fonts/Raleway-ExtraLight.ttf'),
-        ralewaySemiBold: require('../assets/fonts/Raleway-SemiBold.ttf'),
+      'Raleway-Bold': require('./assets/fonts/Raleway-Bold.ttf'),
+      'Raleway-Italic': require('./assets/fonts/Raleway-Italic.ttf'),
+      'Raleway-BoldItalic': require('./assets/fonts/Raleway-BoldItalic.ttf'),
+      'Raleway-Regular': require('./assets/fonts/Raleway-Regular.ttf'),
       })
 return [fontLoaded, error]
 }

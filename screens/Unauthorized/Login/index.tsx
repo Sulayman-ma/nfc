@@ -1,4 +1,5 @@
-import {ActivityIndicator, GestureResponderEvent, Text, TextInput, View} from 'react-native';
+import {TextInput, View} from 'react-native';
+import { ActivityIndicator, MD2Colors } from 'react-native-paper';
 import React, { useState } from 'react';
 import { FIREBASE_AUTH } from '../../../FirebaseConfig';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
@@ -48,7 +49,7 @@ const Login = () => {
       <TextInput  value={email} autoCapitalize='none' onChangeText={(text) => setEmail(text)} placeholder='email' style={style.input}/>
       <TextInput  value={password} autoCapitalize='none' secureTextEntry={true} onChangeText={(text) => setPassword(text)} placeholder='password' style={style.input}/>
       <HeightSpacer height={10}/>
-      {loading ? <ActivityIndicator size={SIZES.large} color={COLORS.black} />  
+      {loading ? <ActivityIndicator animating={true} color={MD2Colors.blueGrey100} size={'large'} />  
       :<View style={{width:100, }}>
         <ReuseableButton 
         btnText={'Login'} onPress={signIn} textColor={COLORS.white} width={(SIZES.width-50)/2} backgroundColor={COLORS.black} borderWidth={0} borderColor={COLORS.black}        
