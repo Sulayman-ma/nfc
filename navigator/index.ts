@@ -1,7 +1,4 @@
-import BottomTabNavigator from "./BottomTabNavigator";
-import Main from "./Main";
+import AuthorizedNavigator from './AuthorizedNavigator';
+import Main from './Main';
 
-export { 
-    Main,
-    BottomTabNavigator
-}
+export { Main, AuthorizedNavigator };

@@ -1,7 +1,7 @@
-import {StyleSheet, Text} from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import React from 'react';
 
-const ReuseableText = ({text, family, size, color}) => {
+const ReuseableText = ({ text, family, size, color }) => {
   return <Text style={styles.textStyle(family, size, color)}>{text}</Text>;
 };
 

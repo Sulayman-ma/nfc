@@ -1,39 +1,41 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { useCallback } from "react";
-import * as Splashscreen from 'expo-splash-screen'
-import { Home, Login, Profile } from '../screens';
-import React from 'react'
-import UseGetFonts from '../hooks/useGetFonts';
+import { Login } from '../screens';
+import React, { useEffect, useState } from 'react';
+import { LayoutChangeEvent, View } from 'react-native';
+import { User, onAuthStateChanged } from 'firebase/auth';
+import { FIREBASE_AUTH } from '../FirebaseConfig';
+import AuthorizedNavigator from './AuthorizedNavigator';
 
+const Stack = createNativeStackNavigator();
 
-const Stack = createNativeStackNavigator()
+const Main = (prop: MainProp) => {
+  const [user, setUser] = useState<User | null>(null);
 
-const Main = () => {
-    const [fontLoaded,error] = UseGetFonts()
-
-  const onLayoutRootView = useCallback(async() => {
-    if(fontLoaded){
-      await Splashscreen.hideAsync()
-    }
-  },[fontLoaded, error])
-
-  if(!fontLoaded || error){
-    return null
-  } 
+  useEffect(() => {
+    onAuthStateChanged(FIREBASE_AUTH, (user) => {
+      setUser(user);
+    });
+  }, []);
   return (
     <NavigationContainer>
-      <Stack.Navigator 
+      <Stack.Navigator
         screenOptions={{
-          headerShown: false
+          headerShown: false,
         }}
       >
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Profile" component={Profile} />
+        {user ? (
+          <Stack.Screen name="authorized" component={AuthorizedNavigator} />
+        ) : (
+          <Stack.Screen name="unauthorized" component={Login} />
+        )}
       </Stack.Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
+
+interface MainProp {
+  onLayout: (event: LayoutChangeEvent) => void;
+}
