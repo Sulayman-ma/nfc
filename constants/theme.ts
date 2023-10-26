@@ -1,5 +1,5 @@
-import {Dimensions} from 'react-native';
-const {height, width} = Dimensions.get('window');
+import { Dimensions } from 'react-native';
+const { height, width } = Dimensions.get('window');
 
 const COLORS = {
   primary: '#312651',
@@ -105,7 +105,7 @@ const FONT = {
   medium: 'DMMedium',
   bold: 'DMBold',
   raleway: 'Raleway',
-  ralewayRegular:' ralewayRegular',
+  ralewayRegular: ' Raleway-Regular',
 };
 
 const SHADOWS = {
@@ -132,13 +132,13 @@ const SHADOWS = {
   large: {
     shadowColor: '#171717',
     shadowOffset: {
-      width: -2, 
-      height: 4
+      width: -2,
+      height: 4,
     },
     shadowOpacity: 0.2,
     shadowRadius: 3,
     elevation: 10,
-  }
+  },
 };
 
 const SIZES = {
@@ -162,4 +162,4 @@ const TEXT = {
   xxLarge: 32,
 };
 
-export {SHADOWS, SIZES, TEXT, COLORS, FONT};
+export { SHADOWS, SIZES, TEXT, COLORS, FONT };

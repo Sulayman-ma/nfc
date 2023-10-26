@@ -1,37 +1,29 @@
-import {
-  GestureResponderEvent,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import { GestureResponderEvent, StyleSheet, Text } from 'react-native';
 import React from 'react';
-import {FONT, SHADOWS, SIZES} from '../../constants/theme';
+import { FONT, SHADOWS, SIZES } from '../../constants/theme';
+import { Button, MD2Colors } from 'react-native-paper';
 
 interface ButtonProp {
   onPress: ((event: GestureResponderEvent) => void) | undefined;
   btnText: string | number;
   textColor: string;
   width: number | string;
-  backgroundColor: string | number;
+  backgroundColor: string;
   borderWidth: string | number;
   borderColor: string | number;
 }
 const ReuseableButton = (prop: ButtonProp) => {
-  const {
-    onPress,
-    btnText,
-    textColor,
-    width,
-    backgroundColor,
-    borderWidth,
-    borderColor,
-  } = prop;
+  const { onPress, btnText, textColor, width, backgroundColor, borderWidth, borderColor } = prop;
   return (
-    <TouchableOpacity
+    <Button
+      mode="text"
+      textColor={textColor}
+      buttonColor={MD2Colors.red500}
       onPress={onPress}
-      style={[styles.btnStyle(width, backgroundColor, borderWidth, borderColor), SHADOWS.large]}>
-      <Text style={styles.btnText(textColor)}>{btnText}</Text>
-    </TouchableOpacity>
+      style={[styles.btnStyle(width, backgroundColor, borderWidth, borderColor), SHADOWS.large]}
+    >
+      <Text style={styles.btnText}>{btnText}</Text>
+    </Button>
   );
 };
 
@@ -39,8 +31,6 @@ export default ReuseableButton;
 
 const styles = StyleSheet.create({
   btnStyle: (width, backgroundColor, borderWidth, borderColor) => ({
-    width: width,
-    backgroundColor: backgroundColor,
     alignItems: 'center',
     justifyContent: 'center',
     height: 45,
@@ -48,10 +38,9 @@ const styles = StyleSheet.create({
     borderWidth: borderWidth,
     borderColor: borderColor,
   }),
-  btnText: textColor => ({
-    fontFamily: FONT.roboto,
+  btnText: {
     fontSize: SIZES.medium,
-    color: textColor,
     textTransform: 'capitalize',
-  }),
+    fontFamily: 'Raleway-Regular',
+  },
 });

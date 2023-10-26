@@ -1,18 +1,20 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Main } from './navigator';
-import { Provider as StoreProvider } from 'react-redux';
-import store from './redux/store';
-import UseGetFonts from './hooks/useGetFonts';
-import {
-  configureFonts,
-  customText,
-  useTheme,
-   PaperProvider,
-} from 'react-native-paper';
-import { useCallback } from "react";
-import * as Splashscreen from 'expo-splash-screen'
+// import { Provider as StoreProvider } from 'react-redux';
+// import store from './redux/store';
+import React from 'react';
+import { configureFonts, DefaultTheme, PaperProvider } from 'react-native-paper';
+import { useCallback } from 'react';
+import * as Splashscreen from 'expo-splash-screen';
+import { useFonts } from 'expo-font';
 
 function App() {
-  const [fontLoaded,error] = UseGetFonts()
+  const [fontLoaded, error] = useFonts({
+    'Raleway-Bold': require('./assets/fonts/Raleway-Bold.ttf'),
+    'Raleway-Italic': require('./assets/fonts/Raleway-Italic.ttf'),
+    'Raleway-BoldItalic': require('./assets/fonts/Raleway-BoldItalic.ttf'),
+    'Raleway-Regular': require('./assets/fonts/Raleway-Regular.ttf'),
+  });
 
   const baseFont = {
     fontFamily: 'Raleway-Regular',
@@ -52,25 +54,25 @@ function App() {
     },
   });
 
+  const theme = {
+    ...DefaultTheme,
+    fonts,
+  };
 
-  const theme = useTheme();
-
-  const onLayoutRootView = useCallback(async() => {
-    if(fontLoaded){
-      await Splashscreen.hideAsync()
+  const onLayoutRootView = useCallback(async () => {
+    if (fontLoaded) {
+      await Splashscreen.hideAsync();
     }
-  },[fontLoaded, error])
+  }, [fontLoaded]);
 
-  if(!fontLoaded || error){
-    return null
-  } 
+  if (!fontLoaded || error) {
+    return null;
+  }
   return (
-    <StoreProvider store={store} >
-      <PaperProvider>
-        <Main/>
-      </PaperProvider>
-    </StoreProvider>
-  )
+    <PaperProvider theme={theme}>
+      <Main onLayout={onLayoutRootView} />
+    </PaperProvider>
+  );
 }
 
-export default App
+export default App;

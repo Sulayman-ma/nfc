@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {COLORS} from '../../constants/theme';
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../../constants/theme';
 
 const commonStyles = StyleSheet.create({
   container: {
@@ -9,7 +9,6 @@ const commonStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   textStyle: {
-    fontFamily: 'ralewayBold',
     fontSize: 23,
     fontWeight: '900',
     color: '#ffffff',

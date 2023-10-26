@@ -1,8 +1,8 @@
-import {View} from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 
-const WidthSpacer = ({width}) => {
-  return <View style={{width: width}} />;
+const WidthSpacer = ({ width }) => {
+  return <View style={{ width: width }} />;
 };
 
 export default WidthSpacer;
