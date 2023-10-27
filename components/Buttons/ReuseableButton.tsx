@@ -13,14 +13,25 @@ interface ButtonProp {
   borderColor: string | number;
 }
 const ReuseableButton = (prop: ButtonProp) => {
-  const { onPress, btnText, textColor, width, backgroundColor, borderWidth, borderColor } = prop;
+  const {
+    onPress,
+    btnText,
+    textColor,
+    width,
+    backgroundColor,
+    borderWidth,
+    borderColor,
+  } = prop;
   return (
     <Button
       mode="text"
       textColor={textColor}
       buttonColor={MD2Colors.red500}
       onPress={onPress}
-      style={[styles.btnStyle(width, backgroundColor, borderWidth, borderColor), SHADOWS.large]}
+      style={[
+        styles.btnStyle(width, backgroundColor, borderWidth, borderColor),
+        SHADOWS.large,
+      ]}
     >
       <Text style={styles.btnText}>{btnText}</Text>
     </Button>

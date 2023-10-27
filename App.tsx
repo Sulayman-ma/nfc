@@ -3,7 +3,11 @@ import { Main } from './navigator';
 // import { Provider as StoreProvider } from 'react-redux';
 // import store from './redux/store';
 import React from 'react';
-import { configureFonts, DefaultTheme, PaperProvider } from 'react-native-paper';
+import {
+  configureFonts,
+  DefaultTheme,
+  PaperProvider,
+} from 'react-native-paper';
 import { useCallback } from 'react';
 import * as Splashscreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
