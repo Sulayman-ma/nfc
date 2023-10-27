@@ -1,6 +1,10 @@
 import styles from './styles';
 import React, { PropsWithoutRef } from 'react';
-import { HeightSpacer, ReuseableButton, ReuseableText } from '../../../components';
+import {
+  HeightSpacer,
+  ReuseableButton,
+  ReuseableText,
+} from '../../../components';
 import { COLORS, FONT, SIZES, TEXT } from '../../../constants/theme';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FIREBASE_AUTH } from '../../../FirebaseConfig';
