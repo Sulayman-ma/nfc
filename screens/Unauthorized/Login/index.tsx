@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable quotes */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-misused-promises */
@@ -5,7 +7,6 @@
 import { Image, KeyboardAvoidingView, View } from "react-native";
 import {
   ActivityIndicator,
-  Button,
   IconButton,
   MD2Colors,
   TextInput,
@@ -107,7 +108,7 @@ const Login = ({ navigation }) => {
         />
         <HeightSpacer height={20} />
         <TextInput
-          label="e-mail"
+          label="E-Mail"
           value={email}
           autoCapitalize="none"
           onChangeText={(text) => setEmail(text)}
@@ -124,6 +125,7 @@ const Login = ({ navigation }) => {
           style={style.input}
           right={
             <TextInput.Icon
+              mode="contained-tonal"
               icon={passwordVisibilty ? "eye" : "eye-off"}
               onPress={() => setPasswordVisibility((value) => !value)}
             />
@@ -137,37 +139,37 @@ const Login = ({ navigation }) => {
             size={"large"}
           />
         ) : (
-          <>
+          <View style={style.buttonArea}>
             <ReuseableButton
               btnText={"Login"}
               onPress={signIn}
-              textColor={COLORS.white}
-              width={(SIZES.width - 50) / 2}
-              backgroundColor={COLORS.black}
+              textColor={MD2Colors.white}
+              width={200}
+              backgroundColor={MD2Colors.blue700}
               borderWidth={0}
-              borderColor={COLORS.black}
+              borderColor={MD2Colors.black}
             />
             <HeightSpacer height={10} />
             <ReuseableButton
               onPress={createAccount}
               btnText={"create Account"}
-              textColor={COLORS.white}
-              width={(SIZES.width - 50) / 2}
-              backgroundColor={COLORS.black}
+              textColor={MD2Colors.white}
+              width={200}
+              backgroundColor={MD2Colors.blue700}
               borderWidth={0}
-              borderColor={COLORS.black}
+              borderColor={MD2Colors.black}
             />
             <HeightSpacer height={10} />
             <ReuseableButton
               onPress={() => navigation.navigate("welcome")}
               btnText={"back"}
-              textColor={COLORS.white}
-              width={(SIZES.width - 50) / 2}
-              backgroundColor={COLORS.black}
+              textColor={MD2Colors.white}
+              width={200}
+              backgroundColor={MD2Colors.blue700}
               borderWidth={0}
-              borderColor={COLORS.black}
+              borderColor={MD2Colors.black}
             />
-          </>
+          </View>
         )}
       </KeyboardAvoidingView>
     </SafeAreaView>
