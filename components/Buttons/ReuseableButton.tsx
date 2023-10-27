@@ -1,16 +1,17 @@
-import { GestureResponderEvent, StyleSheet, Text } from 'react-native';
-import React from 'react';
-import { FONT, SHADOWS, SIZES } from '../../constants/theme';
-import { Button, MD2Colors } from 'react-native-paper';
+/* eslint-disable quotes */
+import { GestureResponderEvent, StyleSheet, Text } from "react-native";
+import React from "react";
+import { SHADOWS, SIZES } from "../../constants/theme";
+import { Button, MD2Colors } from "react-native-paper";
 
 interface ButtonProp {
-  onPress: ((event: GestureResponderEvent) => void) | undefined;
-  btnText: string | number;
-  textColor: string;
-  width: number | string;
-  backgroundColor: string;
-  borderWidth: string | number;
-  borderColor: string | number;
+  onPress?: ((event: GestureResponderEvent) => void) | undefined;
+  btnText?: string | number;
+  textColor?: string;
+  width?: number | string;
+  backgroundColor?: string;
+  borderWidth?: string | number;
+  borderColor?: string | number;
 }
 const ReuseableButton = (prop: ButtonProp) => {
   const {
@@ -42,8 +43,8 @@ export default ReuseableButton;
 
 const styles = StyleSheet.create({
   btnStyle: (width, backgroundColor, borderWidth, borderColor) => ({
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     height: 45,
     borderRadius: SIZES.small,
     borderWidth: borderWidth,
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
   }),
   btnText: {
     fontSize: SIZES.medium,
-    textTransform: 'capitalize',
-    fontFamily: 'Raleway-Regular',
+    textTransform: "capitalize",
+    fontFamily: "Raleway-Regular",
   },
 });

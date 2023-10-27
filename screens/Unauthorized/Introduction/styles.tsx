@@ -1,24 +1,22 @@
 /* eslint-disable quotes */
 import { StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../../../constants/theme";
+import { SIZES } from "../../../constants/theme";
 import { MD2Colors } from "react-native-paper";
 
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: MD2Colors.blue900,
   },
-  input: {
-    width: SIZES.width / 2,
-    borderRadius: 5,
-    height: SIZES.xxLarge,
-    backgroundColor: COLORS.blanchedalmond,
-    marginVertical: 10,
-    justifyContent: "center",
+  image: {
+    width: SIZES.width,
+    resizeMode: "cover",
+    height: SIZES.height,
   },
   textArea: {
-    width: (SIZES.width / 10) * 9,
-    marginLeft: SIZES.width / 20,
+    position: "absolute",
+    bottom: 0,
+    marginBottom: 60,
+    marginHorizontal: 20,
   },
 });
 

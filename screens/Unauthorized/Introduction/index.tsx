@@ -10,27 +10,32 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import style from "./styles";
 import { HeightSpacer, ReuseableText } from "../../../components";
 import { SIZES } from "../../../constants/theme";
-import { View } from "react-native";
+import { Image, View } from "react-native";
 
 const Introductory = ({ navigation }) => {
   return (
     <SafeAreaView style={style.container}>
-      <HeightSpacer height={SIZES.height / 2 + SIZES.height / 10} />
+      <Image
+        source={require("../../../assets/images/intro-bg.jpg")}
+        style={style.image}
+      />
       <View style={style.textArea}>
         <ReuseableText
           text={"Subscription Manager"}
           family={"Raleway-Regular"}
           size={SIZES.xxLarge + 20}
-          color={MD2Colors.white}
+          color={MD2Colors.blue800}
           weight={700}
+          align={"left"}
         />
         <HeightSpacer height={10} />
         <ReuseableText
           text={"The best financial assistant for your subscription."}
           family={"Raleway-Regular"}
           size={SIZES.large}
-          color={MD2Colors.grey100}
+          color={MD2Colors.black}
           weight={700}
+          align={""}
         />
         <HeightSpacer height={15} />
         <Button
@@ -39,7 +44,13 @@ const Introductory = ({ navigation }) => {
           style={{ width: SIZES.width / 3 }}
           onPress={() => navigation.navigate("login")}
         >
-          <Text style={{ color: MD2Colors.blue800 }}>Continue</Text>
+          <ReuseableText
+            text={"Continue."}
+            family={"Raleway-Regular"}
+            size={SIZES.medium}
+            color={MD2Colors.black}
+            weight={700}
+          />
         </Button>
       </View>
     </SafeAreaView>
