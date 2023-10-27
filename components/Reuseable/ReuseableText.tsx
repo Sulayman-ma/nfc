@@ -13,8 +13,15 @@ interface TextProp {
   align?: string,
 }
 const ReuseableText = (prop:TextProp) => {
+  const {  
+    text,
+    family,
+    size, 
+    color,
+    weight,
+    align} = prop
   return (
-    <Text style={styles.textStyle(prop.family, prop.size, prop.color, prop.weight, prop.align)}>{prop?.text}</Text>
+    <Text style={styles.textStyle(family, size, color, weight, align)}>{text}</Text>
   );
 };
 

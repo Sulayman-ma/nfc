@@ -39,6 +39,12 @@ const style = StyleSheet.create({
     height: 40,
     backgroundColor: MD2Colors.white,
   },
+  buttonArea: {
+    flex: 1,
+    justifyContent: "center",
+    width: SIZES.width / 2 + SIZES.width / 4,
+    marginLeft: SIZES.width / 12,
+  },
 });
 
 export default style;

@@ -25,9 +25,9 @@ const ReuseableButton = (prop: ButtonProp) => {
   } = prop;
   return (
     <Button
-      mode="text"
+      mode="elevated"
       textColor={textColor}
-      buttonColor={MD2Colors.red500}
+      buttonColor={backgroundColor}
       onPress={onPress}
       style={[
         styles.btnStyle(width, backgroundColor, borderWidth, borderColor),
@@ -54,5 +54,6 @@ const styles = StyleSheet.create({
     fontSize: SIZES.medium,
     textTransform: "capitalize",
     fontFamily: "Raleway-Regular",
+    fontWeight: "700",
   },
 });

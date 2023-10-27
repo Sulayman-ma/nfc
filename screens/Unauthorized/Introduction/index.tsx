@@ -23,7 +23,7 @@ const Introductory = ({ navigation }) => {
         <ReuseableText
           text={"Subscription Manager"}
           family={"Raleway-Regular"}
-          size={SIZES.xxLarge + 20}
+          size={SIZES.xxLarge + 10}
           color={MD2Colors.blue800}
           weight={700}
           align={"left"}
@@ -35,7 +35,7 @@ const Introductory = ({ navigation }) => {
           size={SIZES.large}
           color={MD2Colors.black}
           weight={700}
-          align={""}
+          align={"left"}
         />
         <HeightSpacer height={15} />
         <Button
