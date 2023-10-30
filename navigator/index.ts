@@ -1,4 +1,5 @@
-import AuthorizedNavigator from './AuthorizedNavigator';
-import Main from './Main';
+/* eslint-disable quotes */
+import BottomTabNavigator from "./BottomTabNavigator";
+import Main from "./Main";
 
-export { Main, AuthorizedNavigator };
+export { Main, BottomTabNavigator };

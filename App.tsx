@@ -1,27 +1,26 @@
+/* eslint-disable quotes */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Main } from './navigator';
-// import { Provider as StoreProvider } from 'react-redux';
-// import store from './redux/store';
-import React from 'react';
+import { Main } from "./navigator";
+import { Provider as StoreProvider } from "react-redux";
+import store from "./redux/store";
+import React from "react";
 import {
   configureFonts,
   DefaultTheme,
   PaperProvider,
-} from 'react-native-paper';
-import { useCallback } from 'react';
-import * as Splashscreen from 'expo-splash-screen';
-import { useFonts } from 'expo-font';
+} from "react-native-paper";
+import { useFonts } from "expo-font";
 
 function App() {
   const [fontLoaded, error] = useFonts({
-    'Raleway-Bold': require('./assets/fonts/Raleway-Bold.ttf'),
-    'Raleway-Italic': require('./assets/fonts/Raleway-Italic.ttf'),
-    'Raleway-BoldItalic': require('./assets/fonts/Raleway-BoldItalic.ttf'),
-    'Raleway-Regular': require('./assets/fonts/Raleway-Regular.ttf'),
+    "Raleway-Bold": require("./assets/fonts/Raleway-Bold.ttf"),
+    "Raleway-Italic": require("./assets/fonts/Raleway-Italic.ttf"),
+    "Raleway-BoldItalic": require("./assets/fonts/Raleway-BoldItalic.ttf"),
+    "Raleway-Regular": require("./assets/fonts/Raleway-Regular.ttf"),
   });
 
   const baseFont = {
-    fontFamily: 'Raleway-Regular',
+    fontFamily: "Raleway-Regular",
   } as const;
 
   const baseVariants = configureFonts({ config: baseFont });
@@ -32,19 +31,19 @@ function App() {
     // Customize individual base variants:
     displayMedium: {
       ...baseVariants.displayMedium,
-      fontFamily: 'Raleway-Bold',
+      fontFamily: "Raleway-Bold",
     },
     bold: {
       ...baseVariants.bodyMedium,
-      fontFamily: 'Raleway-Bold',
+      fontFamily: "Raleway-Bold",
     },
     italic: {
       ...baseVariants.bodyMedium,
-      fontFamily: 'Raleway-Italic',
+      fontFamily: "Raleway-Italic",
     },
     boldItalic: {
       ...baseVariants.bodyMedium,
-      fontFamily: 'Raleway-BoldItalic',
+      fontFamily: "Raleway-BoldItalic",
     },
   } as const;
 
@@ -63,19 +62,15 @@ function App() {
     fonts,
   };
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontLoaded) {
-      await Splashscreen.hideAsync();
-    }
-  }, [fontLoaded]);
-
   if (!fontLoaded || error) {
     return null;
   }
   return (
-    <PaperProvider theme={theme}>
-      <Main onLayout={onLayoutRootView} />
-    </PaperProvider>
+    <StoreProvider store={store}>
+      <PaperProvider theme={theme}>
+        <Main />
+      </PaperProvider>
+    </StoreProvider>
   );
 }
 
