@@ -1,24 +1,24 @@
-import { StyleSheet } from 'react-native';
-import { COLORS } from '../../constants/theme';
+/* eslint-disable quotes */
+import { StyleSheet } from "react-native";
+import { MD2Colors } from "react-native-paper";
 
 const commonStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.lightsteelblue,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: MD2Colors.white,
+    width: "100%",
   },
   textStyle: {
     fontSize: 23,
-    fontWeight: '900',
-    color: '#ffffff',
+    fontWeight: "900",
+    color: MD2Colors.white,
   },
   primaryButton: {
     marginBottom: 20,
     borderRadius: 30,
-    color: '#ffffff',
+    color: MD2Colors.white,
     padding: 15,
-    backgroundColor: '#1da5cf',
+    backgroundColor: MD2Colors.black,
   },
 });
 

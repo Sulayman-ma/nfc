@@ -1,10 +1,18 @@
+/* eslint-disable quotes */
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Introductory, Login } from "../screens";
+import {
+  Description,
+  Introductory,
+  Login,
+  TrendingItem,
+  TrendingList,
+  Upcoming,
+} from "../screens";
 import React, { useEffect, useState } from "react";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { FIREBASE_AUTH } from "../FirebaseConfig";
-import AuthorizedNavigator from "./AuthorizedNavigator";
+import { BottomTabNavigator } from "../navigator";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +32,17 @@ const Main = () => {
         }}
       >
         {user ? (
-          <Stack.Screen name="authorized" component={AuthorizedNavigator} />
+          <>
+            <Stack.Screen name="tab-screen" component={BottomTabNavigator} />
+            <Stack.Screen name="upcoming" component={Upcoming} />
+            <Stack.Screen
+              name="description"
+              component={Description}
+              options={{ headerShown: true }}
+            />
+            <Stack.Screen name="trending" component={TrendingList} />
+            <Stack.Screen name="trending/item" component={TrendingItem} />
+          </>
         ) : (
           <>
             <Stack.Screen name="welcome" component={Introductory} />

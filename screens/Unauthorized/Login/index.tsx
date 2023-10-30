@@ -24,7 +24,7 @@ import {
   ReuseableButton,
   ReuseableText,
 } from "../../../components";
-import { COLORS, SIZES } from "../../../constants/theme";
+import { SIZES } from "../../../constants/theme";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState(""),
