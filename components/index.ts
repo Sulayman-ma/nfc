@@ -7,6 +7,8 @@ import HomeHeader from "./Home/HomeHeader";
 import HomeSubscription from "./Home/HomeSubscription";
 import HomeTrending from "./Home/HomeTrending";
 import HomeUpcoming from "./Home/HomeUpcoming";
+import TrendingApp from "./Trending/TrendingApp";
+
 
 export {
   ReuseableText,
@@ -17,4 +19,5 @@ export {
   HomeSubscription,
   HomeUpcoming,
   HomeTrending,
+  TrendingApp,
 };
