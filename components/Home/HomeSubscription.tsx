@@ -176,7 +176,8 @@ const styles = StyleSheet.create({
   },
   bodyPrimaryText: {
     fontSize: SIZES.medium,
-    fontWeight: "700",
+    textTransform: 'capitalize',
+    fontWeight: "800",
     color: MD2Colors.black,
   },
   bodySecondaryText: {

@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable quotes */
+
 const DisneyImg = require("../assets/images/disney.jpeg");
 const HBOImg = require("../assets/images/hbo.jpeg");
 const IntroImg = require("../assets/images/intro-bg.jpg");

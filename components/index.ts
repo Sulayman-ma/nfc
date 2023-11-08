@@ -8,7 +8,7 @@ import HomeSubscription from "./Home/HomeSubscription";
 import HomeTrending from "./Home/HomeTrending";
 import HomeUpcoming from "./Home/HomeUpcoming";
 import TrendingApp from "./Trending/TrendingApp";
-
+import HomeModal from "./Home/HomeModal";
 
 export {
   ReuseableText,
@@ -19,5 +19,6 @@ export {
   HomeSubscription,
   HomeUpcoming,
   HomeTrending,
+  HomeModal,
   TrendingApp,
 };

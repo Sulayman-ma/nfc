@@ -9,7 +9,7 @@ import { SIZES } from "../constants/theme";
 const Tab = createBottomTabNavigator();
 
 const tabBarStyle = {
-  padding: 0,
+  paddingTop: 20,
   borderRadius: 20,
   height: 80,
   position: "absolute",
